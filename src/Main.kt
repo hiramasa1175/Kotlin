@@ -13,8 +13,8 @@ fun main(args: Array<String>) {
   println(y)
 
   var z = 4
-  /* z = z + 12 */
-  z += 12
+  // z = z + 12
+  z += 16
   println(z)
 
   // AND OR NOT
