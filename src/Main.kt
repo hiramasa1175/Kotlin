@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
 
   var z = 4
   // z = z + 12
-  z += 16
+  z += 20
   println(z)
 
   // AND OR NOT
