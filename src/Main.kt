@@ -1,24 +1,13 @@
 fun main(args: Array<String>) {
-  // + - * / %
-  val x = 10
-  println(x / 3)
-  println(x / 3.0)
-  println(x % 3)
+  // 文字列
+  println("hello" + " " + "world")
 
-  // ++ --
-  var y = 5
-  y++
-  println(y)
-  y--
-  println(y)
+  val name = "hiramasa"
+  println("my name is $name")
 
-  var z = 4
-  // z = z + 12
-  z += 20
-  println(z)
+  println("my score is ${12 + 38}")
 
-  // AND OR NOT
-  // && || !
-  val flag = true
-  println(!flag)
+  // \n: 改行
+  // \t: タブ
+  println("hello\n wor\td")
 }
