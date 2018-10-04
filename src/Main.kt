@@ -1,13 +1,15 @@
 fun main(args: Array<String>) {
-  // 文字列
-  println("hello" + " " + "world")
+  // if
+  val score = 81
+  // > >= < <= == !=
+  if(score > 80) {
+    println("Great!")
+  } else if(score > 60) {
+    println("Good!")
+  } else {
+    println("so so ...")
+  }
 
-  val name = "hiramasa"
-  println("my name is $name")
-
-  println("my score is ${12 + 38}")
-
-  // \n: 改行
-  // \t: タブ
-  println("hello\n wor\td")
+  val result = if(score > 80) "Great!" else "so so ..."
+  println(result)
 }
