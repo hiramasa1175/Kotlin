@@ -1,23 +1,24 @@
 fun main(args: Array<String>) {
-  // String, Char
-  val msg: String = "hello world"
-  val c: Char = 'a'
-  println(msg)
-  println(c)
+  // + - * / %
+  val x = 10
+  println(x / 3)
+  println(x / 3.0)
+  println(x % 3)
 
-  // Byte, Short, Int, Long
-  val i: Int = 100
-  val l: Long = 55555555555L
-  println(i)
-  println(l)
+  // ++ --
+  var y = 5
+  y++
+  println(y)
+  y--
+  println(y)
 
-  // Float, Double
-  val d: Double = 234.523
-  val f: Float = 12.344F
-  println(d)
-  println(f)
+  var z = 4
+  /* z = z + 12 */
+  z += 12
+  println(z)
 
-  // Boolean (true/ false)
-  val flag: Boolean = true
-  println(flag)
+  // AND OR NOT
+  // && || !
+  val flag = true
+  println(!flag)
 }
