@@ -1,15 +1,28 @@
 fun main(args: Array<String>) {
-  // if
-  val score = 81
-  // > >= < <= == !=
-  if(score > 80) {
-    println("Great!")
-  } else if(score > 60) {
-    println("Good!")
-  } else {
-    println("so so ...")
+  // when
+  val num = 100
+
+  when (num) {
+    0 -> println("Zero")
+    1 -> println("One")
+    2, 3 -> println("Two or Three")
+    in 4..10 -> println("Many")
+    else -> {
+      println("other")
+      println("hello world!")
+    }
   }
 
-  val result = if(score > 80) "Great!" else "so so ..."
-  println(result)
+//  val result = when (num) {
+//    0 -> "Zero"
+//    1 -> "One"
+//    2, 3 -> "Two or Three"
+//    in 4..10 -> "Many"
+//    else -> {
+//      "Other"
+//      "Hello World!"
+//    }
+//  }
+//
+//  println(result)
 }
