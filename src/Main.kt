@@ -1,17 +1,21 @@
-// 関数
+// Class
+// - data: property
+// - fun: method
 
-//fun sayHi(): Unit {
-//  println("hi!")
-//}
-
-//fun sayHi(): String {
-//  return "hi!"
-//}
-
-//fun sayHi(): String = "hi!"
-fun sayHi() = "hi!"
+class User {
+  var name = "Me!"
+  fun sayHi() {
+//    println("hi ${this.name}")
+    println("hi $name")
+  }
+}
 
 fun main(args: Array<String>) {
-  val msg = sayHi()
-  println(msg)
+//  val user: User = User()
+  val user = User() // インスタンス
+  println(user.name)
+  user.sayHi()
+  user.name = "Me Me!"
+  println(user.name)
+  user.sayHi()
 }
