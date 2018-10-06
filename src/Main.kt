@@ -1,25 +1,25 @@
-// 抽象クラス -> 具象クラス
-// User -> Japanese, American
+// Interface
 
-abstract class User {
-  abstract fun sayHi()
-}
-
-class Japanese : User() {
-  override fun sayHi() {
-    println("こんにちは！")
+interface Sharable {
+  // 抽象プロパティ
+  val version: Double
+  // 抽象メソッド
+  fun share()
+  // メソッド
+  fun getInfo() {
+    println("Share I/F ($version)")
   }
 }
 
-class American : User() {
-  override fun sayHi() {
-    println("Hi!")
+class User: Sharable {
+  override val version = 1.1
+  override fun share() {
+    println("Sharing...")
   }
 }
 
 fun main(args: Array<String>) {
-  val tom = American()
-  val aki = Japanese()
-  tom.sayHi()
-  aki.sayHi()
+  val user = User()
+  user.share()
+  user.getInfo()
 }
