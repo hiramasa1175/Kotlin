@@ -1,20 +1,25 @@
-// 拡張
-fun User.sayHello() {
-  println("hello $name")
+// 抽象クラス -> 具象クラス
+// User -> Japanese, American
+
+abstract class User {
+  abstract fun sayHi()
 }
 
-val User.myName: String
-  get() = "I am $name"
+class Japanese : User() {
+  override fun sayHi() {
+    println("こんにちは！")
+  }
+}
 
-class User(var name: String) {
-  fun sayHi() {
-    println("hi $name")
+class American : User() {
+  override fun sayHi() {
+    println("Hi!")
   }
 }
 
 fun main(args: Array<String>) {
-  val tom = User("tom")
-  tom.sayHello() // hello tom
-  tom.sayHi() // hi tom
-  println(tom.myName) // i am tom
+  val tom = American()
+  val aki = Japanese()
+  tom.sayHi()
+  aki.sayHi()
 }
