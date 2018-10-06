@@ -1,5 +1,7 @@
-// 継承
-// user -> AdminUser
+// アクセス修飾子
+// - public どこからでも
+// - protected そのクラス＋サブクラス
+// - private そのクラス
 
 class AdminUser(name: String) : User(name) {
   fun sayHello() {
@@ -11,7 +13,7 @@ class AdminUser(name: String) : User(name) {
   }
 }
 
-open class User(var name: String) {
+open class User(protected var name: String) {
   open fun sayHi() {
     println("hi $name")
   }
@@ -19,13 +21,7 @@ open class User(var name: String) {
 
 fun main(args: Array<String>) {
   val bob = AdminUser("bob")
-  println(bob.name)
+//  println(bob.name)
   bob.sayHello() // hello
   bob.sayHi()
-
-  println("")
-
-  val hiramasa = User("hiramasa")
-  println(hiramasa.name)
-  hiramasa.sayHi()
 }
