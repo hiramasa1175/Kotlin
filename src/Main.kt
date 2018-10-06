@@ -1,28 +1,31 @@
-// Class
-// - data: property
-// - fun: method
+// 継承
+// user -> AdminUser
 
-class User(var name: String) {
-  var team = "red"
-    // getter
-    get() = field.toUpperCase()
-    // setter
-    set(value) {
-      if (value != "") {
-        field = value
-      }
-    }
+class AdminUser(name: String) : User(name) {
+  fun sayHello() {
+    println("hello $name")
+  }
 
-  fun sayHi() {
+  override fun sayHi() {
+    println("[admin] hi $name")
+  }
+}
+
+open class User(var name: String) {
+  open fun sayHi() {
     println("hi $name")
   }
 }
 
 fun main(args: Array<String>) {
-  val tom = User("tom")
-  println(tom.team)
-  tom.team = "blue"
-  println(tom.team)
-  tom.team = ""
-  println(tom.team)
+  val bob = AdminUser("bob")
+  println(bob.name)
+  bob.sayHello() // hello
+  bob.sayHi()
+
+  println("")
+
+  val hiramasa = User("hiramasa")
+  println(hiramasa.name)
+  hiramasa.sayHi()
 }
