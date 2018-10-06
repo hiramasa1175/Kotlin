@@ -4,10 +4,14 @@
 
 class User(var name: String) {
   var team = "red"
-
-  init {
-    println("instance created, name: $name, team: $team")
-  }
+    // getter
+    get() = field.toUpperCase()
+    // setter
+    set(value) {
+      if (value != "") {
+        field = value
+      }
+    }
 
   fun sayHi() {
     println("hi $name")
@@ -16,9 +20,9 @@ class User(var name: String) {
 
 fun main(args: Array<String>) {
   val tom = User("tom")
-  println(tom.name)
-  tom.sayHi()
-  val bob = User("bob")
-  println(bob.name)
-  bob.sayHi()
+  println(tom.team)
+  tom.team = "blue"
+  println(tom.team)
+  tom.team = ""
+  println(tom.team)
 }
