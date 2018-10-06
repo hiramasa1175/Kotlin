@@ -4,9 +4,11 @@
 
 class User(var name: String) {
   var team = "red"
+
   init {
     println("instance created, name: $name, team: $team")
   }
+
   fun sayHi() {
     println("hi $name")
   }
