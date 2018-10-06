@@ -1,12 +1,17 @@
 // 関数
-fun sayHi(name: String = "hiramasa", age: Int = 23) {
-  println("hi! $name ($age)")
-}
+
+//fun sayHi(): Unit {
+//  println("hi!")
+//}
+
+//fun sayHi(): String {
+//  return "hi!"
+//}
+
+//fun sayHi(): String = "hi!"
+fun sayHi() = "hi!"
 
 fun main(args: Array<String>) {
-  sayHi("tom", 22)
-  sayHi("bob", 20)
-  sayHi()
-  sayHi(age = 19, name = "steve")
-  sayHi(name = "tanaka", age = 33)
+  val msg = sayHi()
+  println(msg)
 }
