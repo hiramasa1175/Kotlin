@@ -1,17 +1,12 @@
 fun main(args: Array<String>) {
-  // while
-  // 0..9
+  // for (変数 in データの集合) 処理
 
-  var i = 0
-//  var i = 100
+  // break
+  // continue
 
-  while (i < 10) {
-    println("loop: $i")
-    i++
+  for (i in 0..9) {
+    if (i == 5) break
+//    if (i == 5) continue
+    println(i)
   }
-
-  do {
-    println("loop2: $i")
-    i++
-  } while (i < 10)
 }
