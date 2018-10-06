@@ -2,20 +2,21 @@
 // - data: property
 // - fun: method
 
-class User {
-  var name = "Me!"
+class User(var name: String) {
+  var team = "red"
+  init {
+    println("instance created, name: $name, team: $team")
+  }
   fun sayHi() {
-//    println("hi ${this.name}")
     println("hi $name")
   }
 }
 
 fun main(args: Array<String>) {
-//  val user: User = User()
-  val user = User() // インスタンス
-  println(user.name)
-  user.sayHi()
-  user.name = "Me Me!"
-  println(user.name)
-  user.sayHi()
+  val tom = User("tom")
+  println(tom.name)
+  tom.sayHi()
+  val bob = User("bob")
+  println(bob.name)
+  bob.sayHi()
 }
