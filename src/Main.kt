@@ -1,21 +1,23 @@
+// 例外処理
+
+class MyException(message: String) : Throwable(message)
+
+fun div(a: Int, b: Int) {
+  try {
+    if (b < 0) {
+      throw MyException("not minus!")
+    }
+    println(a / b)
+  } catch (e: ArithmeticException) {
+    println(e.message)
+  } catch (e: MyException) {
+    println(e.message)
+  } finally {
+    println(" -- end -- ")
+  }
+}
+
 fun main(args: Array<String>) {
-  val prices = mutableListOf(53.2, 48.2, 32.8)
-  prices
-      .asSequence()
-      .map { it * 1.08 } // 引数 -> 処理
-      .filter { it > 50 } // n -> n > 50
-      .forEach { println(it) }
-
-  val iterable = arrayOf(1, 2, 3, 4, 5)
-
-  // Create a sequence with a function, returning an iterator
-  val sequence1 = Sequence { iterable.iterator() }
-  println(sequence1.joinToString())
-  println(sequence1.drop(1).joinToString())
-
-  // create a sequence from an existing iterator
-  // can be iterated only once
-  val sequence2 = iterable.iterator().asSequence()
-  println(sequence2.joinToString())
-//  sequence2.drop(1).joinToString() < - Error
+  div(3, 0)
+  div(3, -3)
 }
