@@ -1,37 +1,30 @@
 // Collection
-/*
- - List (Immutable/Mutable)
- - Set (Immutable/Mutable)
- - Map (Immutable/Mutable)
-*/
 
-fun test(): List<String> {
-  val temp = listOf("1", "2", "3")
-  return temp
-}
+/*
+- List (Immutable/Mutable)
+- Set (Immutable/Mutable)
+- Map (Immutable/Mutable)
+ */
 
 fun main(args: Array<String>) {
-  val sales1 = listOf(20, 30, 40)
-  val sales2 = mutableListOf(20, 30, 40)
+//  val answers: Set<Int> = setOf(5, 3, 8, 5)
+  val answers = setOf(5, 3, 8, 5)
+  val answers2 = mutableSetOf(5, 3, 8, 5)
 
-  println(sales1)
-  println(sales2)
+  println(answers)
+  println(answers2)
 
-  sales2[1] = 50
+  answers2.add(15)
+  answers2.remove(3)
 
-  println(sales1)
-  println(sales2)
+  println(answers)
+  println(answers2)
 
-  println(sales1.size)
+  println(answers.contains(3)) // true
 
-  for (sale in sales1) {
-    println(sale)
-  }
-
-  for (sale in sales2) {
-    println(sale)
-  }
-
-  println(test())
-
+  val set1 = setOf(1, 3, 5, 8)
+  val set2 = setOf(3, 5, 8, 9)
+  println(set1.intersect(set2))
+  println(set1.union(set2))
+  println(set1.subtract(set2))
 }
