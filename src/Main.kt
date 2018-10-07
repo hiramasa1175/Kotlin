@@ -1,24 +1,21 @@
-// Collection
-
-/*
-- List (Immutable/Mutable)
-- Set (Immutable/Mutable)
-- Map (Immutable/Mutable)
- */
-
 fun main(args: Array<String>) {
-//  val users: Map<String, Int> = mapOf("test1" to 40, "test2" to 50, "test3" to 60)
-//  val users = mapOf("test1" to 1, "test2" to 2, "test3" to 3)
-  val users = mutableMapOf("test1" to 1, "test2" to 2, "test3" to 3)
+  val prices = mutableListOf(53.2, 48.2, 32.8)
+  prices
+      .asSequence()
+      .map { it * 1.08 } // 引数 -> 処理
+      .filter { it > 50 } // n -> n > 50
+      .forEach { println(it) }
 
-  println("users[test1] = " + users["test1"])
-  println(users.entries)
-  users["test1"] = 0
-  users["test2"] = 1
-  users["test3"] = 2
+  val iterable = arrayOf(1, 2, 3, 4, 5)
 
-  println("users.size = " + users.size)
-  println("users.keys = " + users.keys)
-  println("users.values = " + users.values)
-  println("users.entries = " + users.entries)
+  // Create a sequence with a function, returning an iterator
+  val sequence1 = Sequence { iterable.iterator() }
+  println(sequence1.joinToString())
+  println(sequence1.drop(1).joinToString())
+
+  // create a sequence from an existing iterator
+  // can be iterated only once
+  val sequence2 = iterable.iterator().asSequence()
+  println(sequence2.joinToString())
+//  sequence2.drop(1).joinToString() < - Error
 }
