@@ -7,24 +7,18 @@
  */
 
 fun main(args: Array<String>) {
-//  val answers: Set<Int> = setOf(5, 3, 8, 5)
-  val answers = setOf(5, 3, 8, 5)
-  val answers2 = mutableSetOf(5, 3, 8, 5)
+//  val users: Map<String, Int> = mapOf("test1" to 40, "test2" to 50, "test3" to 60)
+//  val users = mapOf("test1" to 1, "test2" to 2, "test3" to 3)
+  val users = mutableMapOf("test1" to 1, "test2" to 2, "test3" to 3)
 
-  println(answers)
-  println(answers2)
+  println("users[test1] = " + users["test1"])
+  println(users.entries)
+  users["test1"] = 0
+  users["test2"] = 1
+  users["test3"] = 2
 
-  answers2.add(15)
-  answers2.remove(3)
-
-  println(answers)
-  println(answers2)
-
-  println(answers.contains(3)) // true
-
-  val set1 = setOf(1, 3, 5, 8)
-  val set2 = setOf(3, 5, 8, 9)
-  println(set1.intersect(set2))
-  println(set1.union(set2))
-  println(set1.subtract(set2))
+  println("users.size = " + users.size)
+  println("users.keys = " + users.keys)
+  println("users.values = " + users.values)
+  println("users.entries = " + users.entries)
 }
