@@ -1,13 +1,20 @@
-
 private val nList = ArrayList<Long>()
 private val oList = ArrayList<Char>()
 
 fun main(args: Array<String>) {
   nList.add(10)
   nList.add(10)
-  oList.add('×')
+  oList.add('-')
 
-  println(calculator())
+  nList.add(10)
+  oList.add('*')
+
+  nList.add(10)
+  oList.add('+')
+
+  nList.add(10)
+  oList.add('*')
+
   println(calculator2())
 }
 
@@ -37,8 +44,25 @@ fun calculator(): Long {
 }
 
 fun calculator2(): Long {
-  val nList = ArrayList<Long>(nList)
-  val oList = ArrayList<Char>(oList)
+
+  oList
+      .filter { it == '*' || it == '/' }
+      .map {
+        val i = oList.indexOfFirst { it == '*' ||  it == '/'}
+        val result = if (it == '*') nList[i] * nList[i + 1] else nList[i] / nList[i + 1]
+        nList[i] = result
+        nList.removeAt(i + 1)
+        oList.removeAt(i)
+      }
+  oList
+      .filter { it == '-' }
+      .map {
+        val i = oList.indexOfFirst { it == '-'}
+        val result = nList[i] - nList[i + 1]
+        nList[i] = result
+        nList.removeAt(i + 1)
+        oList.removeAt(i)
+      }
 
   return nList.sum()
 }
