@@ -8,6 +8,7 @@ fun main(args: Array<String>) {
   oList.add('×')
 
   println(calculator())
+  println(calculator2())
 }
 
 fun calculator(): Long {
@@ -32,7 +33,12 @@ fun calculator(): Long {
     println(e)
   }
 
-  val result = nList.sum()
+  return nList.sum()
+}
 
-  return result
+fun calculator2(): Long {
+  val nList = ArrayList<Long>(nList)
+  val oList = ArrayList<Char>(oList)
+
+  return nList.sum()
 }
