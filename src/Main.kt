@@ -1,20 +1,19 @@
-// null
 
-private var nStr: String = ""
 private val nList = ArrayList<Long>()
 private val oList = ArrayList<Char>()
 
 fun main(args: Array<String>) {
+  nList.add(10)
+  nList.add(10)
+  oList.add('×')
 
-  
-
+  println(calculator())
 }
 
 fun calculator(): Long {
   var i = 0
   val nList = ArrayList<Long>(nList)
   val oList = ArrayList<Char>(oList)
-  nList.add(nStr.toLong())
   try {
     while (i < oList.size) {
       if (oList[i] == '×' || oList[i] == '÷') {
@@ -35,5 +34,5 @@ fun calculator(): Long {
 
   val result = nList.sum()
 
-  return (result * 1.08).toLong()
+  return result
 }
