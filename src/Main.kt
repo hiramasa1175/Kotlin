@@ -1,19 +1,24 @@
-private val nList = ArrayList<Long>()
-private val oList = ArrayList<Char>()
+val nList = mutableListOf<Long>()
+val oList = mutableListOf<Char>()
 
 fun main(args: Array<String>) {
   nList.add(10)
-  nList.add(10)
+
   oList.add('-')
 
   nList.add(10)
+
   oList.add('*')
 
   nList.add(10)
+
   oList.add('+')
 
   nList.add(10)
+
   oList.add('*')
+
+  nList.add(10)
 
   println(calculator2())
 }
@@ -45,24 +50,27 @@ fun calculator(): Long {
 
 fun calculator2(): Long {
 
+  val nList = nList
+  val oList = oList
+
   oList
       .filter { it == '*' || it == '/' }
       .map {
-        val i = oList.indexOfFirst { it == '*' ||  it == '/'}
+        val i = oList.indexOfFirst { it == '*' || it == '/' }
         val result = if (it == '*') nList[i] * nList[i + 1] else nList[i] / nList[i + 1]
         nList[i] = result
         nList.removeAt(i + 1)
         oList.removeAt(i)
       }
+
   oList
-      .filter { it == '-' }
+      .filter { it == '+' || it == '-' }
       .map {
-        val i = oList.indexOfFirst { it == '-'}
-        val result = nList[i] - nList[i + 1]
-        nList[i] = result
-        nList.removeAt(i + 1)
-        oList.removeAt(i)
+        val result = if (it == '+') nList[0] + nList[1] else nList[0] - nList[1]
+        nList[0] = result
+        nList.removeAt(1)
+        oList.removeAt(0)
       }
 
-  return nList.sum()
+  return nList[0]
 }
