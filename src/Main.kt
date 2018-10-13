@@ -21,6 +21,9 @@ fun main(args: Array<String>) {
   nList.add(10)
 
   println(calculator2())
+
+  println(nList)
+  println(oList)
 }
 
 fun calculator(): Long {
@@ -50,8 +53,8 @@ fun calculator(): Long {
 
 fun calculator2(): Long {
 
-  val nList = nList
-  val oList = oList
+  val nList = nList.toMutableList()
+  val oList = oList.toMutableList()
 
   oList
       .filter { it == '*' || it == '/' }
