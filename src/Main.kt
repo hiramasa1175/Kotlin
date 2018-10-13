@@ -55,7 +55,7 @@ fun calculator2(): Long {
 
   oList
       .filter { it == '*' || it == '/' }
-      .map {
+      .map { it ->
         val i = oList.indexOfFirst { it == '*' || it == '/' }
         val result = if (it == '*') nList[i] * nList[i + 1] else nList[i] / nList[i + 1]
         nList[i] = result
