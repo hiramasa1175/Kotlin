@@ -1,19 +1,23 @@
+import java.lang.StringBuilder
 
-import java.text.NumberFormat
+var test = "1000+2000+10000"
 
 fun main(args: Array<String>) {
-  val str = "1,000+1,000"
-  val value = toStringWithNotSeparator(str)
-  println(value.toStringWithSeparator())
+  println(toStringWithSeparator("1000"))
 }
 
-fun Int.toStringWithSeparator() = "%,d".format(this)
+fun toStringWithSeparator(str: String, appe: String = ""): String {
+  var result = str + appe
+  result = result.replace(",", "")
+  var strBuil = StringBuilder().append(result)
+  var count = 0
+  for ((index, value) in strBuil.withIndex().reversed()) {
+    if (value in '0'..'9') count++ else count = 0
+    if (count == 3) {
+      strBuil = strBuil.insert(index, ",")
+      count = 0
+    }
+  }
 
-fun toStringWithNotSeparator(str: String): Int {
-  val n : Int
-
-  val number = NumberFormat.getInstance().parse(str)
-  n = number.toInt()
-
-  return n
+  return strBuil.toString()
 }
