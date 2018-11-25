@@ -1,17 +1,11 @@
 fun main(args: Array<String>) {
-  print("Enter name:")
-  val name = readLine()
-  print("Enter age:")
-  val age = readLine()!!.toInt()
-  print("Enter department:")
-  var dep: String?
-  dep = readLine()
-  print("Enter pi:")
-  val pi: Double = readLine()!!.toDouble()
+  var x = 10
+  var y = 20
 
-  println("**** output ****")
-  println("name:" + name)
-  println("age:" + age)
-  println("department:" + dep)
-  println("PI:" + pi)
+  x = x + y // x = 30
+  y = x - y // y = 10
+  x = x - y // 20
+
+  println(x)
+  println(y)
 }
