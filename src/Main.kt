@@ -1,14 +1,17 @@
-import java.lang.StringBuilder
-import java.math.BigDecimal
-
-var test = 11_000
-
 fun main(args: Array<String>) {
-  for (off in 1..99) {
-    val off2 = 0.01 * off
-    val off3 = (1.0 - off2)
-    val result = (test * off3).toFloat()
+  print("Enter name:")
+  val name = readLine()
+  print("Enter age:")
+  val age = readLine()!!.toInt()
+  print("Enter department:")
+  var dep: String?
+  dep = readLine()
+  print("Enter pi:")
+  val pi: Double = readLine()!!.toDouble()
 
-    println(result.toInt())
-  }
+  println("**** output ****")
+  println("name:" + name)
+  println("age:" + age)
+  println("department:" + dep)
+  println("PI:" + pi)
 }
